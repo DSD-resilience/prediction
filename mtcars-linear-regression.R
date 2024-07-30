@@ -1,0 +1,24 @@
+# Load the necessary library
+library(datasets)
+
+# Load the mtcars dataset
+data("mtcars")
+
+# View the first few rows of the dataset
+head(mtcars)
+
+# Create a linear regression model to predict 'mpg' based on 'hp' and 'wt'
+model <- lm(mpg ~ hp + wt, data = mtcars)
+
+# Summarize the model
+summary(model)
+
+# Create new data for prediction
+new_data <- data.frame(hp = c(110, 150, 200), wt = c(2.5, 3.0, 3.5))
+
+# Make predictions using the model
+predictions <- predict(model, newdata = new_data)
+
+# Print the predictions
+print(predictions)
+
